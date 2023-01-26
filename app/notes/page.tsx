@@ -1,6 +1,7 @@
 // import PocketBase from 'pocketbase';
 import styles from './Notes.module.css';
 import CreateNote from './CreateNote';
+import DeleteNote from './DeleteNote';
 
 
 // function that uses reactJS 13 fetch feature to access database
@@ -12,13 +13,16 @@ async function getNotes() {
 }
 
 
-// React component that displays most of the content 
+// React component that displays all of the notes content in 3 different parts 
 // (App title, all the notes, and the form to create a new note )
 export default async function NotesPage() {
+
   const notes = await getNotes();
+
   return(
     <div>
-      <h1>Notes app</h1>
+
+      <h1>Notes application </h1>
 
       <div className={styles.grid}>
         {notes?.map((note) => {
@@ -26,13 +30,16 @@ export default async function NotesPage() {
         })}
       </div>
 
+
       <CreateNote />
+      <DeleteNote />
 
     </div>
   );
 }
 
-// Note function that will display every note and its content 
+// Note component that will provide every individual note
+// This component is used in the getNotes() function 
 function Note({ note }: any) {
   const { id, title, content, created } = note || {};
 

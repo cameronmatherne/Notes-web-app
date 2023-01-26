@@ -1,17 +1,19 @@
+/* eslint-disable @next/next/no-head-element */
+import './globals.css';
 import Link from 'next/link';
-import styles from './Notes.module.css';
-
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html>
       <body>
-        {children}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
-  )
+  );
 }
