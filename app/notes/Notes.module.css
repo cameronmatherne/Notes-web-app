@@ -10,7 +10,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
-    max-width: 1000px;
+
   }
 
   .noteForm {
@@ -59,12 +59,19 @@
   }
   
   .note {
-    height: auto;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     padding: 0.25rem;
     border-radius: 2px;
   }
   
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+
   .title {
     padding: 0.1rem;
     font-size: 1rem;
