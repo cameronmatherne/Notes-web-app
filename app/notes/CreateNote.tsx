@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './Notes.module.css';
 import { useRouter } from 'next/navigation';
-
+import DeleteNote from './DeleteNote';
 
 // component that handles processing form with user input to
 // the database through POST request 
@@ -52,6 +52,7 @@ export default function CreateNote() {
                     onChange={(e) => setContent(e.target.value)}
                 />
                 <button type="submit"> Create note </button>
+    
             </form>
         </div>
     );
